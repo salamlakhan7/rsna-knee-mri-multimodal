@@ -1,0 +1,14 @@
+# data and large files - never commit competition data
+*.dcm
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+data/
+input/
+wheels/
+__pycache__/
+.ipynb_checkpoints/
+.env
+.DS_Store

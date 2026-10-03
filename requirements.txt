@@ -1,0 +1,13 @@
+numpy
+pandas
+scikit-learn
+pydicom
+torch
+timm
+transformers
+langdetect
+matplotlib
+streamlit
+pylibjpeg
+pylibjpeg-libjpeg
+pylibjpeg-openjpeg
