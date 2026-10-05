@@ -1,0 +1,11 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+streamlit>=1.46
+sqlalchemy>=2.0
+psycopg2-binary
+pandas
+numpy
+pydicom
+opencv-python-headless
+langdetect
+timm
+torch
