@@ -68,3 +68,6 @@ PROJECT_LOG.md   dated work log
 
 ## Data and license note
 No competition images, DICOMs or full reports are stored here. Follow the competition rules for data use.
+
+## Author
+Abdul Salam - [GitHub](https://github.com/salamlakhan7) - [LinkedIn](https://www.linkedin.com/in/abdul-salam-501b2025b)
