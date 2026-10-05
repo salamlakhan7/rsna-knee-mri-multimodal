@@ -1,4 +1,4 @@
-# KneeScope: Streamlit demo for the RSNA knee MRI project
+# KneeScope: Streamlit demo
 
 Pages: Home, Technology, Results, Live Explore (login required), My History, Contact, Log in / Sign up, Account, Admin.
 
@@ -7,16 +7,16 @@ Pages: Home, Technology, Results, Live Explore (login required), My History, Con
 pip install -r requirements.txt
 streamlit run app.py
 ```
-A `kneeapp.db` SQLite file is created automatically. Put `resnet18_attn.pt` in `models/` to enable the MRI tab.
+Put `resnet18_attn.pt` in `models/` to enable the MRI tab.
 
-## Production (Neon PostgreSQL)
-1. Create a Neon project and copy the connection string.
-2. Set it as the `DATABASE_URL` secret (see `.streamlit/secrets.toml.example`) or as an environment variable.
-3. Tables are created on first start. Deploy on Streamlit Community Cloud (or Hugging Face Spaces if memory is short).
-4. Make yourself admin after signing up: `DATABASE_URL=... python manage.py promote you@example.com`
+## Production
+- **Frontend and app server:** Streamlit Community Cloud, main file `demo/app.py`, Python 3.12.
+- **Database:** Neon PostgreSQL. Set the secret `DATABASE_URL` (see `.streamlit/secrets.toml.example`). Tables are created on first start.
+- **Admin:** after signing up, run `DATABASE_URL=... python manage.py promote you@example.com`.
 
 ## Security notes
-PBKDF2-SHA256 password hashes (600k iterations, per-user salt), same error for unknown email and wrong password, lockout for 10 minutes after 5 failed logins, zip-slip and size checks on uploads, no uploaded files stored. No email verification and no persistent login across browser refresh.
+PBKDF2-SHA256 password hashes with per-user salt, identical error for unknown email and wrong password, 10-minute lockout after 5 failed logins,
+zip-slip and size checks on uploads, uploaded files are not stored. No email verification; sessions end on browser refresh.
 
 ## Tests
 `python -m pytest tests`
